@@ -7,7 +7,13 @@ from django.contrib.auth.models import User
 class School(models.Model):
     name = models.CharField(max_length=255)
     code = models.CharField(max_length=20, unique=True)
+    location = models.CharField(max_length=255)
     district = models.CharField(max_length=100)
+    school_logo = models.FileField(upload_to='pics')
+    police_station = models.CharField(max_length=255) 
+    head_teacher_name = models.CharField(max_length=255)
+    dos_theology_name = models.CharField(max_length=255)
+
 
     def __str__(self):
         return f"{self.code} - {self.name}"
@@ -213,7 +219,7 @@ class Carousel(models.Model):
 class Contact_us(models.Model):
     user_name = models.CharField(max_length=100,null=False)
     contact = models.CharField(max_length=100,null=False)
-    message = models.CharField(max_length=200,null=False)
+    message = models.CharField(max_length=1000,null=False)
     
     
     def __str__(self):
