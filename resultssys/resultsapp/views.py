@@ -6,7 +6,7 @@ from django.contrib.auth.models import User,auth
 from .models import *
 from .schools_selector import(get_schools,get_school)
 from .student_selector import(get_students, get_student)
-from .homepage_selector import(get_about_us, get_schedules,get_schedule)
+from .homepage_selector import(get_all_about_us, get_about_us, get_schedules,get_schedule)
 
 # Create your views here
 
@@ -62,7 +62,7 @@ def manage_registration(request):
 
 def manage_about_us(request):
 
-    get_all_aboutus = get_about_us()
+    get_all_aboutus = get_all_about_us()
     context={
         "get_all_aboutus":get_all_aboutus,
     }
