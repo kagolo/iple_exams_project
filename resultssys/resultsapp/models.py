@@ -169,3 +169,63 @@ class Result(models.Model):
         return "Ungraded"
 
 
+# ---------------
+# ABOUT US
+# ----------------
+class About_us(models.Model):
+    admin_name = models.CharField(max_length=255) 
+    content = models.CharField(max_length=5000)
+
+    def __str__(self):
+        return self.admin_name
+
+
+# ------------------
+# SCHEDULE
+# ------------------
+
+class Schedule(models.Model):
+           date = models.DateField()
+           activity_name = models.CharField(max_length=255)
+           activity_description = models.CharField(max_length=255)
+
+           activity_image = models.FileField(upload_to='pics')
+           
+           def __str__(self):
+               return self.activity_name
+
+# -------------
+# CAROUSEL
+# --------------
+
+class Carousel(models.Model):
+    carousel_image = models.ImageField(upload_to='c_pic')
+    carousel_description = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.carousel_description
+    
+
+# ---------------
+# CONTACT US
+# --------------
+
+class Contact_us(models.Model):
+    user_name = models.CharField(max_length=100,null=False)
+    contact = models.CharField(max_length=100,null=False)
+    message = models.CharField(max_length=200,null=False)
+    
+    
+    def __str__(self):
+        return self.user_name
+    
+# ---------------
+# OUR PARTNERS
+# ---------------
+
+class Our_partners(models.Model):
+    partner_name = models.CharField(max_length=100,null=False)
+    partner_image = models.ImageField(upload_to='c_pic')
+
+    def __str__(self):
+        return self.partner_name

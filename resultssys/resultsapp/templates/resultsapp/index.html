@@ -55,11 +55,11 @@
                      <ul>
                         <li>
                            <span class="fas fa-phone-volume"></span>
-                           <p>+(000)123 4565 32</p>
+                           <p>0702161678 / 0773971098</p>
                         </li>
                         <li>
                            <span class="fas fa-envelope"></span>
-                           <p><a href="mailto:info@example.com">info@example1.com</a></p>
+                           <p><a href="mailto:info@example.com">iple@gmail.com</a></p>
                         </li>
                         <li>
                         </li>
@@ -166,7 +166,7 @@
       <section class="about py-lg-4 py-md-3 py-sm-3 py-3" id="about">
          <div class="container-fluid py-lg-5 py-md-5 py-sm-4 py-3">
             <div class="title-sub text-left mb-lg-5 mb-md-4 mb-sm-4 mb-3">
-               <h3 class="title mb-md-4 mb-sm-3 mb-3">UMSC Links Of Islamic Schools In Uganda</h3>
+               <h3 class="title mb-md-4 mb-sm-3 mb-3">UMSC Link Of Islamic Schools In Uganda</h3>
                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et</p>
             </div>
             <div class="row abt-colm pb-lg-4 pb-md-3 pb-3">
@@ -382,204 +382,38 @@
                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et</p>
             </div>
             <div class="owl-carousel owl-theme">
+               {% for schedule in get_single_schedules %}
                <div class="item">
                   <div class="clients-color">               
                      <div class="w3-agile-post-img">
-                        <img src="{% static 'images/aa1.jpg' %}" class="img-thumbnail" alt="">
+                        <img src="{{ schedule.activity_image.url }}" alt=""/>
                         <div class="blog-info">
                            <a href="#" data-toggle="modal" data-target="#exampleModalLive">
                               <ul>
-                                 <li>JULY</li>
-                                 <li>15</li>
+                                 <li>{{schedule.date}}</li>
                               </ul>
                            </a>
                         </div>
                      </div>
                      <div class="blog-txt-info">
-                        <h4 class="my-3"><a href="#" data-toggle="modal" data-target="#exampleModalLive">Quisque a rhoncus </a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+                        <h4 class="my-3"><a href="#" data-toggle="modal" data-target="#exampleModalLive">{{schedule.activity_name}}</a></h4>
+                        <p>{{schedule.activity_description}}</p>
                         <div class="news-date-list pt-2">
                            <ul>
-                              <li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                              <li><a href="#" data-toggle="modal" data-target="#exampleModalLive">3 Tags</a></li>
+                              <li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive">{{schedule.date}}</a></li>
+                              <!-- <li><a href="#" data-toggle="modal" data-target="#exampleModalLive">3 Tags</a></li> -->
                            </ul>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class=" item">
-                  <div class="clients-color">   
-                     <div class="w3-agile-post-img">
-                        <img src=" {% static 'images/aa2.jpg' %}" class="img-thumbnail" alt="">
-                        <div class="blog-info">
-                           <a href="#" data-toggle="modal" data-target="#exampleModalLive">
-                              <ul>
-                                 <li>JUL</li>
-                                 <li>15</li>
-                              </ul>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="blog-txt-info">
-                        <h4 class="my-3"><a href="#" data-toggle="modal" data-target="#exampleModalLive">Quisque a rhoncus </a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-                        <div class="news-date-list pt-2">
-                           <ul>
-                              <li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                              <li><a href="#" data-toggle="modal" data-target="#exampleModalLive">3 Tags</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">                               
-                  <div class="clients-color">
-                     <div class="w3-agile-post-img">
-                        <img src="{% static 'images/aa3.jpg' %}" class="img-thumbnail" alt="">
-                        <div class="blog-info">
-                           <a href="#" data-toggle="modal" data-target="#exampleModalLive">
-                              <ul>
-                                 <li>JUL</li>
-                                 <li>15</li>
-                              </ul>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="blog-txt-info">
-                        <h4 class="my-3"><a href="#" data-toggle="modal" data-target="#exampleModalLive">Quisque a rhoncus </a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-                        <div class="news-date-list pt-2">
-                           <ul>
-                              <li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                              <li><a href="#" data-toggle="modal" data-target="#exampleModalLive">3 Tags</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+               {% endfor %}
+               
+              
                <div class="item">
                   <div class="clients-color">
-                     <div class="w3-agile-post-img">
-                        <img src="{% static 'images/aa2.jpg' %}" class="img-thumbnail" alt="">
-                        <div class="blog-info">
-                           <a href="#" data-toggle="modal" data-target="#exampleModalLive">
-                              <ul>
-                                 <li>JUL</li>
-                                 <li>15</li>
-                              </ul>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="blog-txt-info">
-                        <h4 class="my-3"><a href="#" data-toggle="modal" data-target="#exampleModalLive">Quisque a rhoncus </a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-                        <div class="news-date-list pt-2">
-                           <ul>
-                              <li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                              <li><a href="#" data-toggle="modal" data-target="#exampleModalLive">3 Tags</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <div class="clients-color">
-                     <div class="w3-agile-post-img">
-                        <img src="{% static 'images/aa2.jpg' %}" class="img-thumbnail" alt="">
-                        <div class="blog-info">
-                           <a href="#" data-toggle="modal" data-target="#exampleModalLive">
-                              <ul>
-                                 <li>JUL</li>
-                                 <li>15</li>
-                              </ul>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="blog-txt-info">
-                        <h4 class="my-3"><a href="#" data-toggle="modal" data-target="#exampleModalLive">Quisque a rhoncus </a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-                        <div class="news-date-list pt-2">
-                           <ul>
-                              <li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                              <li><a href="#" data-toggle="modal" data-target="#exampleModalLive">3 Tags</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <div class="clients-color">
-                     <div class="w3-agile-post-img">
-                        <img src="{% static 'images/aa3.jpg' %}" class="img-thumbnail" alt="">
-                        <div class="blog-info">
-                           <a href="#" data-toggle="modal" data-target="#exampleModalLive">
-                              <ul>
-                                 <li>JUL</li>
-                                 <li>15</li>
-                              </ul>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="blog-txt-info">
-                        <h4 class="my-3"><a href="#" data-toggle="modal" data-target="#exampleModalLive">Quisque a rhoncus </a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-                        <div class="news-date-list pt-2">
-                           <ul>
-                              <li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                              <li><a href="#" data-toggle="modal" data-target="#exampleModalLive">3 Tags</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <div class="clients-color">
-                     <div class="w3-agile-post-img">
-                        <img src="{% static 'images/aa2.jpg' %}" class="img-thumbnail" alt="">
-                        <div class="blog-info">
-                           <a href="#" data-toggle="modal" data-target="#exampleModalLive">
-                              <ul>
-                                 <li>JUL</li>
-                                 <li>15</li>
-                              </ul>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="blog-txt-info">
-                        <h4 class="my-3"><a href="#" data-toggle="modal" data-target="#exampleModalLive">Quisque a rhoncus </a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-                        <div class="news-date-list pt-2">
-                           <ul>
-                              <li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                              <li><a href="#" data-toggle="modal" data-target="#exampleModalLive">3 Tags</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <div class="clients-color">
-                     <div class="w3-agile-post-img">
-                        <img src="{% static 'images/aa1.jpg' %}" class="img-thumbnail" alt="">
-                        <div class="blog-info">
-                           <a href="#" data-toggle="modal" data-target="#exampleModalLive">
-                              <ul>
-                                 <li>JUL</li>
-                                 <li>15</li>
-                              </ul>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="blog-txt-info">
-                        <h4 class="my-3"><a href="#" data-toggle="modal" data-target="#exampleModalLive">Quisque a rhoncus </a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-                        <div class="news-date-list pt-2">
-                           <ul>
-                              <li class="mr-1"><a href="#" data-toggle="modal" data-target="#exampleModalLive">12/4/2019</a></li>
-                              <li><a href="#" data-toggle="modal" data-target="#exampleModalLive">3 Tags</a></li>
-                           </ul>
-                        </div>
-                     </div>
+                     
+                    
                   </div>
                </div>
             </div>
@@ -759,14 +593,14 @@
                      <div class="wthree-left-right col-lg-4 col-md-4 col-sm-12">
                         <h4 class="pb-lg-3 pb-3">Get In Touch</h4>
                         <div class="bottom-para pb-3">
-                           <p>3481 Melrose Place, Beverly,<br>New York City 90210.</p>
+                           <p>UMSC,EDUCATION DEPARTMENT,<br>Old Kampala</p>
                         </div>
                         <div class="bottom-para">
-                           <p>+(000) 123 4565 32 <br>+(010) 123 4565 354</p>
+                           <p>0702161678 <br>0773971098<br>0701178655</p>
                         </div>
                         <div class="bottom-para pt-3">
-                           <p><a href="mailto:info@example.com">info@example1.com</a> 
-                              <br><a href="mailto:info@example.com">info@example2.com</a>
+                           <p><a href="mailto:info@example.com">iple@gmail.com</a> 
+                              <br><a href="mailto:info@example.com">iple@gmail.com</a>
                            </p>
                         </div>
                      </div>
