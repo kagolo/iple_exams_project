@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,6 +59,41 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar_nav_subtle_hover": False,
     "sidebar_nav_hover_colour": "bg-primary",
     "show_ui_builder": True,
+}
+
+
+JAZZMIN_SETTINGS = {
+    "site_title": "IPLE Examination System",
+    "site_header": "IPLE Admin",
+    "site_brand": "IPLE Admin",
+    "welcome_sign": "Welcome to IPLE Examination Portal",
+
+    "icons": {
+        "resultsapp.User": "fas fa-school",
+        "resultsapp.School": "fas fa-school",
+        "resultsapp.SchoolAdministrator": "fas fa-users",
+        "resultsapp.About_us": "fas fa-circle",
+        "resultsapp.Student": "fas fa-user-graduate",
+        "resultsapp.Subject": "fas fa-book",
+        "resultsapp.AcademicPeriod": "fas fa-calendar",
+        "resultsapp.GradingStructure": "fas fa-chart-line",
+        "resultsapp.Result": "fas fa-list-ol",
+        "auth.Group": "fas fa-users-cog",
+        "auth.User": "fas fa-user",
+    },
+
+    "default_icon_parents": "fas fa-folder",
+    "default_icon_children": "fas fa-circle",
+    
+     "topmenu_links": [
+        {"name": "Home",  "url": "/admin", "permissions": ["auth.view_user"]},
+        {"model": "resultsapp.Student"},
+        {"app": "resultsapp"},
+    ],
+
+    "hide_apps": ["sessions"],        # hide entire app
+    "hide_models": ["auth.Group"],    # hide specific model
+    "order_with_respect_to": ["resultsapp", "auth"],  # control order
 }
 
 
